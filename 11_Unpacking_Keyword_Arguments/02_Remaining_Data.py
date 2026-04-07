@@ -1,21 +1,19 @@
-# A simple function like an API call
-def send_message(user, message=None, urgent=False, **kwargs):
-    print("User:", user)
-    print("Message:", message)
-    print("Urgent:", urgent)
-    print("Extra data:", kwargs)
+def my_post(url, data=None, json=None, **kwargs):
+    print("URL:", url)
+    print("Data:", data)
+    print("JSON:", json)
+    print("Other:", kwargs)
 
 
-# Call function
-send_message(
-    "Shahwar",
-    message="Hello!",
-    urgent=True,
-    timestamp="10:30 AM",
-    location="India"
+# Example call
+my_post(
+    "https://api.example.com",
+    data={"name": "Shahwar"},
+    headers={"Authorization": "Bearer token"},
+    timeout=5
 )
 
-# User: Shahwar
-# Message: Hello!
-# Urgent: True
-# Extra data: {'timestamp': '10:30 AM', 'location': 'India'}
+# URL: https://api.example.com
+# Data: {'name': 'Shahwar'}
+# JSON: None
+# Other: {'headers': {'Authorization': 'Bearer token'}, 'timeout': 5}
